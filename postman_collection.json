@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "50c30918-5d00-4b04-9154-537f10185887",
+		"name": "Document search engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FIND ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2 ENTITY",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 15:59:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"a8c418fa-444f-412a-b3bf-4bdb1c372931\",\n        \"key\": \"key2\",\n        \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n    },\n    {\n        \"id\": \"7380539b-1343-43af-9027-1a669d2a58a0\",\n        \"key\": \"key1\",\n        \"rawDocument\": \"word1, word2 word3\"\n    }\n]"
+				},
+				{
+					"name": "1 Entity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 15:56:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"e0ffdc3b-68d2-4243-94e6-ee9d46de5cbc\",\n        \"key\": \"key1\",\n        \"rawDocument\": \"word1, word2 word3\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "SAVE DOCUMENT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"key2\",\n    \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCESS SAVE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"key2\",\n    \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 15:57:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"17a87138-d119-414c-8a65-9ddc43719bd8\",\n    \"key\": \"key2\",\n    \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n}"
+				}
+			]
+		},
+		{
+			"name": "FIND BY KEY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/documents/key1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents",
+						"key1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "FIND BY KEY",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents/key1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents",
+								"key1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 15:58:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7380539b-1343-43af-9027-1a669d2a58a0\",\n    \"key\": \"key1\",\n    \"rawDocument\": \"word1, word2 word3\"\n}"
+				}
+			]
+		},
+		{
+			"name": "FIND ALL BY WORD SEARCH",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/documents?word=asd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"documents"
+					],
+					"query": [
+						{
+							"key": "word",
+							"value": "asd"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "asd check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?word=asd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "asd"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 16:00:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"a8c418fa-444f-412a-b3bf-4bdb1c372931\",\n        \"key\": \"key2\",\n        \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n    }\n]"
+				},
+				{
+					"name": "FIND ALL BY WORD SEARCH",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?word=word",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "word"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Apr 2021 16:00:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"a8c418fa-444f-412a-b3bf-4bdb1c372931\",\n        \"key\": \"key2\",\n        \"rawDocument\": \"word25 word50, asdfqwrasfasf, asdqwe123\"\n    },\n    {\n        \"id\": \"7380539b-1343-43af-9027-1a669d2a58a0\",\n        \"key\": \"key1\",\n        \"rawDocument\": \"word1, word2 word3\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
